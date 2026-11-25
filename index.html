@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Launch Roblox</title>
+</head>
+<body onclick="start()">
+
+  <button>launch road</button>
+
+  <br><br>
+
+  <video id="vid" src="tut.mp4" hidden></video>
+
+  <script>
+    function start() {
+      const v = document.getElementById('vid');
+      v.hidden = false;
+      v.play();
+
+      if (v.requestFullscreen) {
+        v.requestFullscreen();
+      } else if (v.webkitRequestFullscreen) {
+        v.webkitRequestFullscreen();
+      } else if (v.msRequestFullscreen) {
+        v.msRequestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
