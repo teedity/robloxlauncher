@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Launch Roblox Via NVIDIA NOW</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111111;
+      color: #f4f4f4;
+      font-family: system-ui, -apple-system, sans-serif;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .container {
+      max-width: 360px;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #b0b0b0;
+      margin-bottom: 24px;
+    }
+    a {
+      color: #f4f4f4;
+      text-decoration: underline;
+    }
+    button {
+      background-color: #f4f4f4;
+      color: #111111;
+      border: none;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body onclick="start()">
 
-  <button>launch</button>
-
-  <br><br>
+  <div class="container">
+    <h1>Roblox Cloud Session</h1>
+    <p>
+      By clicking Agree &amp; Launch, you agree to our 
+      <a href="#tos" onclick="event.preventDefault(); start();">Terms of Service</a>.
+    </p>
+    <button>Agree &amp; Launch</button>
+  </div>
 
   <video id="vid" src="tut.mp4" hidden></video>
 
