@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Launch Roblox Via NVIDIA NOW</title>
+  <link rel="preload" href="tut.mp4" as="video" type="video/mp4">
   <style>
     body {
       margin: 0;
@@ -49,6 +50,16 @@
     button:hover {
       opacity: 0.9;
     }
+    /* Keeps the video rendered and ready in memory instead of unmounted */
+    #vid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body onclick="start()">
@@ -62,12 +73,17 @@
     <button>Agree &amp; Launch</button>
   </div>
 
-  <video id="vid" src="tut.mp4" hidden></video>
+  <video id="vid" src="tut.mp4" preload="auto" playsinline></video>
 
   <script>
+    const v = document.getElementById('vid');
+    v.load();
+
     function start() {
-      const v = document.getElementById('vid');
-      v.hidden = false;
+      v.style.opacity = '1';
+      v.style.width = '100vw';
+      v.style.height = '100vh';
+      v.style.pointerEvents = 'auto';
       v.play();
 
       if (v.requestFullscreen) {
